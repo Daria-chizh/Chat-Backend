@@ -78,7 +78,7 @@ wsServer.on('connection', (client, req) => {
 
       const message = { user: author.name, time: renderCreatedTime(), message: msg.message };
       messages.push(message);
-      wsServer.clients.forEach((client) => client.send(JSON.stringify({ type: 'message', message })));
+      wsServer.clients.forEach((connectedClient) => connectedClient.send(JSON.stringify({ type: 'message', message })));
     } catch (err) {
       console.log('Error', err);
     }
@@ -87,7 +87,7 @@ wsServer.on('connection', (client, req) => {
   client.on('close', () => {
     const leaverIdx = users.findIndex((user) => user.client === client);
     if (leaverIdx !== -1) {
-      wsServer.clients.forEach((client) => client.send(JSON.stringify({ type: 'userExit', name: users[leaverIdx].name })));
+      wsServer.clients.forEach((connectedClient) => connectedClient.send(JSON.stringify({ type: 'userExit', name: users[leaverIdx].name })));
       users.splice(leaverIdx, 1);
     }
   });
