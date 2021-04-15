@@ -1,0 +1,38 @@
+{
+  "name": "chat-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "lint": "eslint ."
+  },
+  "engines": {
+    "node": "11.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Daria-chizh/Chat-Backend.git"
+  },
+  "author": "Daria",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Daria-chizh/Chat-Backend/issues"
+  },
+  "homepage": "https://github.com/Daria-chizh/Chat-Backend#readme",
+  "devDependencies": {
+    "eslint": "^7.23.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "@koa/cors": "^3.1.0",
+    "koa": "^2.13.1",
+    "koa-body": "^4.2.0",
+    "koa-bodyparser": "^4.3.0",
+    "uuid": "^8.3.2",
+    "ws": "^7.4.4"
+  }
+}
